@@ -4,6 +4,18 @@ class CSharpImportAllUsingsCodeActionProvider {
   provideCodeActions(document, range, context, token) {
     if (document.languageId !== 'csharp') return [];
 
+    // Only show the action if there are missing namespace diagnostics
+    const diagnostics = context.diagnostics || [];
+    const hasMissingNamespaceErrors = diagnostics.some(diagnostic =>
+      diagnostic.code === 'CS0246' ||
+      diagnostic.code === 'cs0246' ||
+      /could not be found|missing a using directive|are you missing a using directive/i.test(diagnostic.message)
+    );
+
+    if (!hasMissingNamespaceErrors) {
+      return [];
+    }
+
     const action = new vscode.CodeAction(
       'Import missing references in the file',
       vscode.CodeActionKind.QuickFix

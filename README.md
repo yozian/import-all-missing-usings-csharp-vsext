@@ -33,7 +33,7 @@ A powerful VS Code extension that automatically adds all missing `using` stateme
 
 ### Method 4: Keyboard Shortcut
 1. Open a `.cs` file with missing namespace errors
-2. Press `Alt+F Alt+U` to instantly fix all missing usings
+2. Press `Ctrl+Alt+F` to instantly fix all missing usings
 
 ## 📋 Example
 
@@ -113,7 +113,7 @@ namespace MyApp
 - Ensure your .NET SDK is properly installed
 
 ### Keyboard shortcut not working
-- The default shortcut is `Alt+F Alt+U` (press Alt+F, release, then press Alt+U)
+- The default shortcut is `Ctrl+Alt+F`
 - You can customize this in VS Code settings under File → Preferences → Keyboard Shortcuts
 - Search for "Import missing references" to find and modify the shortcut
 

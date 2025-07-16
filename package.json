@@ -2,7 +2,7 @@
   "name": "import-all-missing-usings-csharp-vsext",
   "displayName": "C# Import All Missing Usings",
   "description": "Fix missing usings in c# files",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publisher": "yozian",
   "author": {
     "name": "yozian"
@@ -66,7 +66,7 @@
     "keybindings": [
       {
         "command": "importAllUsings.run",
-        "key": "alt+f alt+u",
+        "key": "ctrl+alt+f",
         "when": "editorTextFocus && editorLangId == csharp"
       }
     ]
