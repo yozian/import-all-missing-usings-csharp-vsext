@@ -1,0 +1,82 @@
+{
+  "name": "import-all-missing-usings-csharp-vsext",
+  "displayName": "C# Import All Missing Usings",
+  "description": "Fix missing usings in c# files",
+  "version": "0.0.1",
+  "publisher": "yozian",
+  "author": {
+    "name": "yozian"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/yozian/import-all-missing-usings-csharp-vsext#readme",
+  "bugs": {
+    "url": "https://github.com/yozian/import-all-missing-usings-csharp-vsext/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yozian/import-all-missing-usings-csharp-vsext"
+  },
+  "categories": [
+    "Other",
+    "Programming Languages"
+  ],
+  "keywords": [
+    "csharp",
+    "using",
+    "imports",
+    "namespace",
+    "quick-fix"
+  ],
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "icon": "icon.jpg",
+  "activationEvents": ["onLanguage:csharp"],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "importAllUsings.run",
+        "title": "Import missing references in the file",
+        "category": "C#"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "importAllUsings.run",
+          "when": "resourceExtname == .cs",
+          "group": "importAllUsings@context"
+        }
+      ],
+      "editor/title/context": [
+        {
+          "command": "importAllUsings.run",
+          "when": "resourceExtname == .cs",
+          "group": "importAllUsings@context"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "importAllUsings.run",
+          "when": "editorLangId == csharp"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "importAllUsings.run",
+        "key": "alt+f alt+u",
+        "when": "editorTextFocus && editorLangId == csharp"
+      }
+    ]
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@vscode/vsce": "^2.24.0"
+  },
+  "scripts": {
+    "package": "vsce package",
+    "publish": "vsce publish"
+  }
+}
