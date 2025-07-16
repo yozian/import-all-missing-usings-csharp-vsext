@@ -2,7 +2,7 @@
 
 A powerful VS Code extension that automatically adds all missing `using` statements in C# files with a single command. No more manually adding namespaces one by one!
 
-![Demo](https://raw.githubusercontent.com/yozian/import-all-missing-usings-csharp-vsext/main/demo.gif)
+![Demo](https://github.com/yozian/import-all-missing-usings-csharp-vsext/blob/master/demo.gif?raw=true)
 
 ## ✨ Features
 
